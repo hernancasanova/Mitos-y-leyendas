@@ -1,0 +1,39 @@
+<html>
+	<title>
+		Mis cartas MYL 
+	</title>
+	<!--body background="mylApp/templates/images/fondo.jpg"-->
+	<!--link rel="stylesheet" href="/templates/css/estilos.css"-->
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	<link rel="stylesheet" href="templates/css/estilos.css">
+	<link rel="icon" href="templates/images/mitos-y-leyendas.jpg">
+	<body>
+		<!--div id="primeraEra">
+			
+		</div>
+		<div id="segundaEra">
+			
+		</div-->
+		<!--img src="templates/images/mitos-y-leyendas.jpg" width="250px" height="250px"-->
+		<h1>
+			<center>
+			{% block title %}{% endblock %}
+			</center>
+		</h1>
+		<!--Esta es la sección: {% block seccion %}{% endblock %}-->
+		<!--img src="C:\Users\Hernan Casanova\Desktop\pruebas\django\mylApp\templates\images\fondo.jpg" width="300px" height="300px"-->
+		<!--img src="../images/fondo.jpg" width="300px" height="300px"-->
+		<!--{% load staticfiles %}-->
+		<!--img src="{% static "fondo.jpg" %}" alt="fondo.jpg" width="300px" height="300px"-->
+		<div id="listCartas">{% block cartas %}{% endblock %}</div>
+
+		<!--img src="{% static "fondo.jpg" %}" alt="My image" width="300px" height="300px"-->
+		<!--{% load staticfiles %}-->
+		<!--img src="{% static "odiseo.jpg" %}" alt="imagen" width="300px" height="300px"Tambien funciona-->
+		<!--img src="{{ MEDIA_URL }}fondo.jpg" width="500px" height="500px"-->
+		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+		<script>
+  			AOS.init();
+		</script>
+	</body>
+</html>

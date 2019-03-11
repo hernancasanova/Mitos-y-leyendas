@@ -1,0 +1,21 @@
+/*#primeraEra{
+	width:50%;
+	height:300px;
+	background-color:green;
+}
+
+#segundaEra{
+	float:right;
+	height:500px;
+	background-color:blue;
+}*/
+h1{
+	color:blue;
+}
+img{
+	border-radius: 1em;
+	border: 1px solid black;
+}
+#listCartas{
+	width: 1000px;
+}
