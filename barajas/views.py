@@ -21,6 +21,8 @@ def buscar(request):
     #habilidad=request.GET['habilidad']
     #p1=card.objects.create(id=numero,Nombre=nombre,Habilidad=habilidad)
     #return render(request, 'FormIngreso.html',{'ingreso':True})
+def inicio(request):
+    return render(request,"inicio.html")
 
 def ingreso(request):
     error=False
@@ -37,4 +39,13 @@ def ingreso(request):
     return render(request,'FormIngreso.html',{'error':error})
     
 def selecColeccion(request):
-    return render(request,'Buscador.html')
+    if 'selectColeccion' in request.GET:
+        coleccion=request.GET['selectColeccion']
+        if coleccion == "FaltantesReto" :
+            return render(request,"Faltantes_el_reto.html")
+        elif coleccion == "FaltantesRetoExtension":
+            return render(request,"Faltantes_el_reto_extension.html")
+        else:
+            return render(request,"ColeccionIncorrecta.html")
+    else:
+        return render(request,'Buscador.html')

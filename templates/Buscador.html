@@ -1,0 +1,36 @@
+{% extends "inicio.html" %}
+
+{% block tituloPagina%}
+Buscador de colecciones
+{% endblock %}
+
+{%block Encabezado%}
+Buscador de colección
+{%endblock%}
+
+{% block cartas %}
+	
+	<form id="browser" action="/buscador" method="get">
+	<center>
+	Seleccionar colección:
+		<select id="selectCol" style="margin-top: 100px;" name="selectColeccion">
+			<option value="FaltantesReto">Faltantes el reto</option>
+			<option value="FaltantesRetoExtension">Faltantes el reto extensión</option>
+			<option value="FaltantesMundoGotico">Faltantes mundo gótico</option>
+			<option value="FaltantesMundoGoticoExtensión">Faltantes mundo gótico extensión</option>
+			<option value="FaltantesIraDelNahual">Faltantes ira del nahual</option>
+			<option value="FaltantesRagnarok">Faltantes ragnarok</option>
+		</select><br><br>
+		<input id="seek" type="submit" value="Buscar colección">
+	</center>
+	</form>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			/*$("#seek").click(function(){
+				console.log($("#selectCol").val());
+				//$("#browser").attr("action","/"+$("#selectCol").val());
+			});*/
+
+		});
+	</script>
+{% endblock %}
