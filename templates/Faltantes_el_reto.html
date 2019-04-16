@@ -5,16 +5,8 @@ Faltantes el reto
 {% block Encabezado %}Faltantes el reto {% endblock %}
 {% block cartas %}
 <br>
-<!--{% block seccion %}imagenes{% endblock %}-->
-<!--a href="../templates/Faltantes_el_reto.html">Ir a faltantes del reto</a-->
-<div class="carta"><img data-aos="flip-right" src="templates/images/FaltantesReto/búfalo blanco.jpg" alt="Búfalo Blanco.jpg" width="300px" height="365px"><center>Búfalo Blanco</center></div>
-<div class="carta"><img data-aos="flip-right" src="templates/images/FaltantesReto/hefesto.jpg" alt="hefesto.jpg" width="300px" height="365px"><center>hefesto</center></div>
-<div class="carta"><img data-aos="flip-right" src="templates/images/FaltantesReto/bunyif.jpg" alt="bunyif.jpg" width="300px" height="365px"><center>bunyif</center></div>
-<div class="carta"><img data-aos="flip-right" src="templates/images/FaltantesReto/anchimallen.jpg" alt="anchimallen.jpg" width="300px" height="365px"><center>anchimallen</center></div>
-<div class="carta"><img data-aos="flip-right" src="templates/images/FaltantesReto/el basajaun.jpg" alt="el basajaun.jpg" width="300px" height="365px"><center>el basajaun</center></div>
-<div class="carta"><img data-aos="flip-right" src="templates/images/FaltantesReto/bruja carabuse.jpg" alt="bruja carabuse.jpg" width="300px" height="365px"><center>bruja carabuse</center></div>
-<div class="carta"><img data-aos="flip-right" src="templates/images/FaltantesReto/eshu.jpg" alt="eshu.jpg" width="300px" height="365px"><center>eshu</center></div>
-
-
+{% for result in result %}
+		<div class="carta"><img id="img" src="templates/images/FaltantesReto/{{result.Nombre}}.jpg" data-aos="flip-right" data-toggle="tooltip" data-placement="right" data-html="true" title="<strong style='color: steelblue;'>NOMBRE:</strong> {{result.Nombre}} <br><strong style='color: steelblue;'>NÚMERO:</strong> {{result.id}} <br><strong style='color: steelblue;'>HABILIDAD:</strong> {{result.Habilidad}}" width="300px" height="365px"><center>{{result.Nombre}}</center></div>
+{% endfor %}
 {% endblock %}
 

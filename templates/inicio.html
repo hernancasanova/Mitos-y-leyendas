@@ -3,7 +3,6 @@
 	{% block tituloPagina %}
 	{% endblock %}
 	</title>
-	<!--link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"-->
 	<link rel="stylesheet" href="templates/css/aos.css">
 	<link rel="stylesheet" href="templates/css/iconate.min.css">
 	<link rel="stylesheet" href="templates/css/all.css">
@@ -11,18 +10,15 @@
 	<link rel="stylesheet" href="templates/css/estilos.css">
 	<link rel="icon" href="templates/images/logo_myl_290.png">
 	<body>
+		<script type="text/javascript" src="templates/js/popper.min.js"></script>
 		<script type="text/javascript" src="templates/js/jquery.min.js"></script>
 		<script type="text/javascript" src="templates/js/aos.js"></script>
 		<script type="text/javascript" src="templates/js/bootstrap.min.js"></script>
 		<script>
   			AOS.init();
-  			/*var iconElement = document.getElementById('icon');
-			var options = {
-    			from: 'fa-bars',
-    			to: 'fa-arrow-right',
-    			animation: 'rubberBand'
-			};
-			iconate(iconElement, options);*/
+  			$(function () {
+  				$('[data-toggle="tooltip"]').tooltip()
+			})
 		</script>
 		<script type="text/javascript" src="templates/js/iconate.js"></script>
 		<nav class="navbar navbar-default navbar-fixed-top">
@@ -32,9 +28,6 @@
 						<li><a href="/formularioIngreso">Ingresar carta</a></li>
 						<li><a href="buscador">Buscar colección</a></li>
 						<li><a href="/inicio">Inicio</a></li>
-						<!--li>Ingresar animal</li>
-						<li>Eliminar animal</li>
-						<li>Listado de animales</li-->
 					</ul>
 				</div>
 			</div>
@@ -47,30 +40,19 @@
 				</center>
 			</h1>
 		</div>
-		<img id="logo" src="templates/images/mitos-y-leyendas.gif" width="320px" height="300px">
-		<!--i id="icon" class="fa fa-bars fa-lg"></i-->
-		<!--i id="icon" class="fas fa-igloo"></i>
-		<i id="icon" class="fab fa-android"></i>
-		<i id="icon" class="fas fa-battery-half"></i-->
-		<!--Esta es la sección: {% block seccion %}{% endblock %}-->
-		<!--img src="C:\Users\Hernan Casanova\Desktop\pruebas\django\mylApp\templates\images\fondo.jpg" width="300px" height="300px"-->
-		<!--img src="../images/fondo.jpg" width="300px" height="300px"-->
-		<!--{% load staticfiles %}-->
-		<!--img src="{% static "fondo.jpg" %}" alt="fondo.jpg" width="300px" height="300px"-->
+		<img id="logo" src="templates/images/logo_myl.png" width="320px" height="300px">
 		<div id="listCartas">
 			{% block cartas %}
+				<li><a href="/formularioIngreso">Ingresar carta</a></li>
+				<li><a href="buscador">Buscar colección</a></li>
+				<li><a href="/inicio">Inicio</a></li>
 			{% endblock %}
 		</div>
 	
 		{% block footer %}
 		<div id="footer">
-			<img src="templates/images/nike.png" alt="nike" width="100px" height="100px">&nbsp Hecho por mi
+			<img src="templates/images/footer.png" alt="nike" width="100px" height="100px">&nbsp; Hecho con django
 		</div>
 		{% endblock %}
-		<!--img src="{% static "fondo.jpg" %}" alt="My image" width="300px" height="300px"-->
-		<!--{% load staticfiles %}-->
-		<!--img src="{% static "odiseo.jpg" %}" alt="imagen" width="300px" height="300px"Tambien funciona-->
-		<!--img src="{{ MEDIA_URL }}fondo.jpg" width="500px" height="500px"-->
-		<!--script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script-->
 	</body>
 </html>

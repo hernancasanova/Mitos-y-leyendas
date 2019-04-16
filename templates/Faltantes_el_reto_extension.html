@@ -5,20 +5,9 @@ Faltantes el reto extensión
 {% block Encabezado %}Faltantes el reto extensión{% endblock %}
 {% block cartas %}
 <br>
-<!--{% block seccion %}imagenes{% endblock %}-->
-<!--a href="../templates/Faltantes_el_reto.html">Ir a faltantes del reto</a-->
-<div class="carta"><img data-aos="flip-right" src="templates/images/FaltantesRetoExtension/shiva.jpg" alt="shiva.jpg" width="300px" height="365px"><center>Shiva</center></div>
-<div class="carta"><img data-aos="flip-right" src="templates/images/FaltantesRetoExtension/maui.jpg" alt="maui.jpg" width="300px" height="365px"><center>Maui</center></div>
-<div class="carta"><img data-aos="flip-right" src="templates/images/FaltantesRetoExtension/apolo.jpg" alt="apolo.jpg" width="300px" height="365px"><center>Apolo</center></div>
-<div class="carta"><img data-aos="flip-right" src="templates/images/FaltantesRetoExtension/tlaloc.jpg" alt="tlaloc.jpg" width="300px" height="365px"><center>Tlaloc</center></div>
-<div class="carta"><img data-aos="flip-right" src="templates/images/FaltantesRetoExtension/odiseo.jpg" alt="odiseo.jpg" width="300px" height="365px"><center>Odiseo</center></div>
-<div class="carta"><img data-aos="flip-right" src="templates/images/FaltantesRetoExtension/balder.jpg" alt="balder.jpg" width="300px" height="365px"><center>Balder</center></div>
-<div class="carta"><img data-aos="flip-right" src="templates/images/FaltantesRetoExtension/sir gawein.jpg" alt="sir gawein.jpg" width="300px" height="365px"><center>Sir gawein</center></div>
-<div class="carta"><img data-aos="flip-right" src="templates/images/FaltantesRetoExtension/hada viviana.jpg" alt="hada viviana.jpg" width="300px" height="365px"><center>Hada viviana</center></div>
-<div class="carta"><img data-aos="flip-right" src="templates/images/FaltantesRetoExtension/afrodita.jpg" alt="afrodita.jpg" width="300px" height="365px"><center>Afrodita</center></div>
-<div class="carta"><img data-aos="flip-right" src="templates/images/FaltantesRetoExtension/cernunno.jpg" alt="cernunno.jpg" width="300px" height="365px"><center>Cernunno</center></div>
-<div class="carta"><img data-aos="flip-right" src="templates/images/FaltantesRetoExtension/horus.jpg" alt="horus.jpg" width="300px" height="365px"><center>Horus</center></div>
-<div class="carta"><img data-aos="flip-right" src="templates/images/FaltantesRetoExtension/wondjinas.jpg" alt="wondjinas.jpg" width="300px" height="365px"><center>Wondjinas</center></div>
+{% for result in result %}
+		<div class="carta"><img id="img" src="templates/images/FaltantesRetoExtension/{{result.Nombre}}.jpg" data-aos="flip-right" data-toggle="tooltip" data-placement="right" data-html="true" title="<strong style='color: steelblue;'>NOMBRE:</strong> {{result.Nombre}} <br><strong style='color: steelblue;'>NÚMERO:</strong> {{result.id}} <br><strong style='color: steelblue;'>HABILIDAD:</strong> {{result.Habilidad}}" width="300px" height="365px"><center>{{result.Nombre}}</center></div>
+{% endfor %}
 
 {% endblock %}
 

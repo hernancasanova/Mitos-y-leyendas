@@ -10,35 +10,48 @@
 	background-color:blue;
 }*/
 #Encabezado{
-	opacity: .9;
+	background-color: rgb(0,0,0,.0);
+	width: 50px;
+	width: auto;
+}
+.titleFormIng{
+	position: center;	
+	margin-left: 35%;
+	color:red;
+	font-family: 'germania One', cursive;
+	font-size: 28px;
+	margin-top: 100px;
+	margin-bottom: 10px;
 }
 #listCartas{
 	width: 1000px;
 	background-color: transparent;
-	color:white;
+	color:red;
+	font-weight: 900;
+	padding-left: 5px; 
 }
 #listCartas select,textarea,input{
 	color:black;
+	font-weight: normal;
+	margin-top: 5px;
 }
 .carta{
 	display: inline-block;
+	color:yellow;
+	text-transform: uppercase;
 }
-.titleFormIng{
-	position: center;
-	margin-left: 35%;
-	color:steelblue;
-	font-family: 'germania One', cursive;
-	font-size: 18px;
-	margin-top: 100px;
-	margin-bottom: 10px;
-}
-input[type="text"]{
+​
+input[type="text"], select{
 	margin-top: 5px;
 }
+
 #FormIngr{
 	margin-left: 37%;
 	opacity: .9;
 	/*background-color: steelblue;*/
+}
+.tooltip-inner {
+    white-space: pre-wrap;
 }
 h1{
 	/*color:blue;*/
@@ -58,8 +71,8 @@ h1{
 	color:white;
 	font-size: 28px;
 	margin-left: 45%;
-	position: absolute;
-	margin-top: 100px;
+	position:absolute;
+	bottom: -1200;
 }
 body{
 	background-image: url("../images/el gran zeus.jpg");
@@ -69,6 +82,13 @@ body{
 	text-shadow: 5px 5px 10px yellow ;
 }
 
+textarea { 
+	vertical-align: top;
+	margin-top: 5px;
+ }
+ a{
+ 	text-decoration: none;
+ }​ 
 /*#icon{
 	float: right;
 	width: 30px;

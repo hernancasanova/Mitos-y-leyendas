@@ -1,18 +1,3 @@
-<!--!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Buscar</title>
-	<link rel="stylesheet" href="templates/css/estilos.css">
-</head>
-<body>
-	<div class="title">Formulario de ingreso de cartas por edición</div>
-	<form action="/ingreso" method="post">
-		<input type="text" name="q">
-		<input type="submit" value="Buscar">
-	</form>
-</body>
-</html-->
 {% extends "inicio.html" %}
 
 {% block tituloPagina %}
@@ -26,16 +11,28 @@ Formulario de Cartas MYL
 	<form id="FormIngr" action="/ingreso" method="get">
 		Número de carta: <input type="number" name="numero"><br>
 		Nombre de carta: <input type="text" name="nombre"><br>
-		Edición de carta: <input type="text" name="edicion"><br>
+		Edición de carta: 
+		<select id="selectCol" name="edicion">
+			<option value="FaltantesReto">Faltantes el reto</option>
+			<option value="FaltantesRetoExtension">Faltantes el reto extensión</option>
+			<option value="FaltantesMundoGotico">Faltantes mundo gótico</option>
+			<option value="FaltantesMundoGoticoExtensión">Faltantes mundo gótico extensión</option>
+			<option value="FaltantesIraDelNahual">Faltantes ira del nahual</option>
+			<option value="FaltantesRagnarok">Faltantes ragnarok</option>
+		</select><br>
 		Habilidad de carta: <textarea name="habilidad" cols="30" rows="10"></textarea><br>
-		<input type="submit" value="Ingresar carta">
+		<input type="submit" value="Ingresar carta" class="btn btn-success">
 	</form>
 	{% if ingreso %}
-	<center><p style="color:green;font-size: 28px">Datos almacenados correctamente!!</p></center>
+	<!--center><p style="color:green;font-size: 28px">Datos almacenados correctamente!!</p></center-->
+		<script type="text/javascript">
+			alert("Datos almacenados correctamente");
+		</script>
 	{% endif %}
 
 	{% if error %}
 	<center><p style="color:red;font-size: 28px">Por favor ingresa los datos correctamente!!</p></center>
+	<center><button class="btn btn-success" ><a href="/ingreso">Ingresar nuevamente</a></button></center>
 	{% endif %}
 {% endblock %}
 
