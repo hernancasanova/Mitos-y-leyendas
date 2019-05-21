@@ -11,17 +11,17 @@ Buscador de colecciones
 {% block cartas %}
 	
 	<form id="browser" action="/buscador" method="get">
-	<center>
 	Seleccionar colección:
-		<select id="selectCol" style="margin-top: 100px;" name="selectColeccion">
-			<option value="FaltantesReto">Faltantes el reto</option>
-			<option value="FaltantesRetoExtension">Faltantes el reto extensión</option>
-			<option value="FaltantesMundoGotico">Faltantes mundo gótico</option>
-			<option value="FaltantesMundoGoticoExtensión">Faltantes mundo gótico extensión</option>
-			<option value="FaltantesIraDelNahual">Faltantes ira del nahual</option>
-			<option value="FaltantesRagnarok">Faltantes ragnarok</option>
-		</select><br><br>
-		<input id="seek" type="submit" value="Buscar colección">
-	</center>
+		<div class="form-group">
+			<select class="form-control" name="selectColeccion">
+				<option value="FaltantesReto">Faltantes el reto</option>
+				<option value="FaltantesRetoExtension">Faltantes el reto extensión</option>
+				<option value="FaltantesMundoGotico">Faltantes mundo gótico</option>
+				<option value="FaltantesMundoGoticoExtensión">Faltantes mundo gótico extensión</option>
+				<option value="FaltantesIraDelNahual">Faltantes ira del nahual</option>
+				<option value="FaltantesRagnarok">Faltantes ragnarok</option>
+			</select>
+		</div>
+		<button type="submit" class="btn btn-primary">Buscar colección</button>
 	</form>
 {% endblock %}
