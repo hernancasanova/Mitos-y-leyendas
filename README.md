@@ -1,2 +1,2 @@
 # Mitos-y-leyendas
-Aplicación  que muestra mis barajas de primera y segunda era del juego de cartas coleccionables mitos y leyendas, así como mis colecciones de cartas
+Aplicación  que muestra las cartas que me faltan de mis colecciones del juego de cartas coleccionables mitos y leyendas. Permite el ingreso y prontamente la edición de datos de las cartas registradas.
