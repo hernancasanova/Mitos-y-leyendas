@@ -1,6 +1,7 @@
 <html>
 	<title>
 	{% block tituloPagina %}
+	Inicio
 	{% endblock %}
 	</title>
 	<link rel="stylesheet" href="templates/css/aos.css">
@@ -26,32 +27,58 @@
 				<div class="navbar-default">
 					<ul class="nav navbar-nav">
 						<li><a href="/formularioIngreso">Ingresar carta</a></li>
-						<li><a href="buscador">Buscar colección</a></li>
+						<li><a href="/buscador">Buscar colección</a></li>
 						<li><a href="/inicio">Inicio</a></li>
 					</ul>
 				</div>
 			</div>
 		</nav>
-		<br><br>
+		<br><br><br>
 		<div id="Encabezado">
-			<h1>
+			<div class="title">
 				<center>
-				{% block Encabezado %}{% endblock %}
+				{% block Encabezado %}
+				¿Qué es Mitos y Leyendas?
+					
+				{% endblock %}
 				</center>
-			</h1>
+			</div>
 		</div>
-		<img id="logo" src="templates/images/logo_myl.png" width="320px" height="300px">
+		<img id="logo" src="templates/images/logo_myl_290.png" width="320px" height="300px">
+
 		<div id="listCartas">
+			
 			{% block cartas %}
-				<li><a href="/formularioIngreso">Ingresar carta</a></li>
-				<li><a href="buscador">Buscar colección</a></li>
-				<li><a href="/inicio">Inicio</a></li>
+<br><pre>
+El mundo de Mitos y Leyendas es un Reino poblado por seres mitológicos.
+Cada jugador busca conquistar el Reino y para ello deberá reclutar 
+Aliados a su causa, formando un ejército de criaturas y humanos que 
+albergará dentro de su Castillo, representado por un mazo de 50 cartas.
+
+En cada enfrentamiento, los jugadores usan su Oro como recurso para 
+preparar a sus Aliados, forjar Armas para la batalla, erguir Tótems que 
+aumentan sus poderes, y adquirir Talismanes que les ayudarán en el 
+momento oportuno.
+
+Los Aliados se alzan en combate durante la Batalla Mitológica, avanzando 
+por los campos del Reino para atacar el Castillo oponente, mientras que 
+los Aliados rivales son los encargados de defender su Castillo para que 
+este reciba el menor daño posible.</pre><code>Fuente: <a href="https://myl.cl/nuevo-en-myl/">https://myl.cl/nuevo-en-myl/</a></code>
+<center><div class="title">¿En que consiste esta página?</div></center>
+<pre>Esta página muestra las cartas que me faltan en mis distintas 
+colecciones de este juego de cartas. Permite el ingreso de cartas según
+su respectiva edición, además de modificar los datos de una carta 
+previamente seleccionada.</pre>
+				<!--div style="margin-left: 100px;margin-top:200px;font-size: 28px;">
+					<div class="carta"><a href="/formularioIngreso"><img src="templates/images/oriental.jpg"><br>Ingresar carta</a></div>
+					<div class="carta"><a href="buscador"><img src="templates/images/zeus.jpg" ><br>Buscar colección</a></div>
+					<div class="carta"><a href="/inicio"><img src="templates/images/oriental.jpg" ><br>Inicio</a></div>
+				</div-->
 			{% endblock %}
 		</div>
-	
 		{% block footer %}
 		<div id="footer">
-			<img src="templates/images/footer.png" alt="nike" width="100px" height="100px">&nbsp; Hecho con django
+			<img src="templates/images/footer.png" alt="nike" width="100px" height="100px">&nbsp; Hecho con django 1.8.5
 		</div>
 		{% endblock %}
 	</body>
