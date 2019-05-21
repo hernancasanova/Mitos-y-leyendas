@@ -20,8 +20,10 @@
 	color:red;
 	font-family: 'germania One', cursive;
 	font-size: 28px;
-	margin-top: 100px;
+	margin-top: 20px;
 	margin-bottom: 10px;
+	-webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color: black;
 }
 #listCartas{
 	width: 1000px;
@@ -73,7 +75,7 @@ input[type="text"], select{
 #footer{
 	color:white;
 	font-size: 28px;
-	margin-left: 45%;
+	margin-left: 40%;
 	position:absolute;
 	bottom: -1200;
 }
@@ -92,6 +94,7 @@ textarea {
 }
 
 #browser{
+	margin-top: 20px;
 	margin-left: 31%;
 	background-color: rgb(255,255,255,.5);
 	padding: 20px;
