@@ -1,0 +1,45 @@
+{% extends "inicio.html" %}
+
+{% block tituloPagina %}
+Formulario de edición de cartas
+{% endblock %}
+
+{% block Encabezado %}Formulario de edición de cartas{% endblock %}
+	
+{% block cartas %}
+	{% for result in result %}
+		<br>
+		<center><div class="carta"><img id="img" src="templates/images/FaltantesReto/{{result.Nombre}}.jpg" data-aos="flip-right"  width="300px" height="365px">
+		</div></center><br>
+		<form id="FormIngr" action="/actualizar" method="get">
+			<div class="form-group">
+			   <label for="numero">Número de carta</label>
+			   <input type="number" class="form-control" id="numero" name="numero" value={{result.id}}>
+			</div>
+			<div class="form-group">
+			    <label for="nombre">Nombre de la carta</label>
+				<input type="text" class="form-control" id="nombre" name="nombre" value="{{result.Nombre}}">
+			</div>
+			<div class="form-group">
+			    <label for="edicion">Escoge edición</label>
+			    <select class="form-control" id="edicion" name="edicion">
+			      <option value="FaltantesReto">El reto</option>
+			      <option value="FaltantesRetoExtension">El reto extensión</option>
+			      <option value="FaltantesMundoGotico">Mundo gótico</option>
+			      <option value="FaltantesMundoGoticoExtensión">Mundo gótico extensión</option>
+			      <option value="FaltantesIraDelNahual">Ira del nahual</option>
+			      <option value="FaltantesRagnarok">Ragnarok</option>
+			    </select>
+			</div>
+			<div class="form-group">
+			  	<label for="habilidad">Habilidad de la carta</label>
+			    <textarea class="form-control" id="habilidad" rows="3" name="habilidad">{{result.Habilidad}}</textarea>
+			</div>
+			<button type="submit" class="btn btn-success">Guardar datos</button>&nbsp;<i class='far fa-save fa-2x'></i>
+		</form>
+		<!--form action="/eliminar" method="get">
+			<button type="submit" class="btn btn-danger">Eliminar carta</button>&nbsp;<i class="fas fa-trash-alt fa-2x"></i>
+		</form-->
+{% endfor %}
+{% endblock %}
+
