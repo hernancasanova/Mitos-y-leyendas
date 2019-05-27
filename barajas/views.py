@@ -42,10 +42,60 @@ def selecColeccion(request):
     if 'selectColeccion' in request.GET:
         coleccion=request.GET['selectColeccion']
         if coleccion == "FaltantesReto" :
-            return render(request,"Faltantes_el_reto.html")
+            colec=card.objects.all().filter(Edicion=coleccion).order_by("id")
+            #colec=card.objects.all()
+            print("contenido de colec:  ",colec)
+            return render(request,"Faltantes_el_reto.html",{"result":colec})
+            #return render(request,"Faltantes_el_reto.html")
         elif coleccion == "FaltantesRetoExtension":
-            return render(request,"Faltantes_el_reto_extension.html")
+            colec=card.objects.filter(Edicion=coleccion).order_by("id")
+            return render(request,"Faltantes_el_reto_extension.html",{"result":colec})
+            #return render(request,"Faltantes_el_reto_extension.html")
         else:
             return render(request,"ColeccionIncorrecta.html")
     else:
         return render(request,'Buscador.html')
+
+def edicion(request):
+    error=False
+    if 'nombre' in request.GET:#si se ha enviado el formulario
+        nombre=request.GET['nombre']
+        #nombre=request.GET['nombre']
+        #habilidad=request.GET['habilidad']
+        #edicion=request.GET['edicion']
+        #if not numero:#si el formulario esta parcialmente incompleto
+        #    error=True
+        #else:
+            #p1=card.objects.create(id=numero,Nombre=nombre,Habilidad=habilidad,Edicion=edicion)
+            #return render(request, 'FormEdit.html',{'ingreso':True})
+        carta=card.objects.filter(Nombre=nombre)
+        return render(request,'FormEdit.html',{'result':carta})
+    else:
+            return render(request,"ColeccionIncorrecta.html")
+
+def actualizar(request):
+    error=False
+    if 'numero' in request.GET:#si se ha enviado el formulario
+        numero=request.GET['numero']
+        nombre=request.GET['nombre']
+        habilidad=request.GET['habilidad']
+        edicion=request.GET['edicion']
+        if not numero:#si el formulario esta parcialmente incompleto
+            error=True
+        else:
+            c=card(id=numero,Nombre=nombre,Habilidad=habilidad,Edicion=edicion)
+            c.save()
+            return render(request, 'inicio.html')
+    return render(request,'FormIngreso.html',{'error':error})
+
+def eliminar(request):
+    error=False
+    if 'numero' in request.GET:#si se ha enviado el formulario
+        numero=request.GET['numero']
+        if not numero:#si el formulario esta parcialmente incompleto
+            error=True
+        else:
+            c=card.objects.get(id=numero)
+            c.delete()
+            return render(request, 'inicio.html')
+    return render(request,'FormIngreso.html',{'error':error})
