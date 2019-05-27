@@ -29,6 +29,9 @@ urlpatterns = [
     url(r'^formularioIngreso', views.formularioIngreso),
     url(r'^atributosMeta', atributos_meta),
     url(r'^faltantesReto', faltantesReto),
+    url(r'^edicion', views.edicion),
+    url(r'^actualizar', views.actualizar),
+    url(r'^eliminar', views.eliminar),
     url(r'^inicio', views.inicio),]
      #url(r'^seccion', seccion),
     #url(r'^site_media/(?P<path>.*)$', 'django.views.static.serve',
