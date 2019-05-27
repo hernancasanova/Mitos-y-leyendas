@@ -6,7 +6,7 @@ Faltantes el reto extensión
 {% block cartas %}
 <br>
 {% for result in result %}
-		<div class="carta"><img id="img" src="templates/images/FaltantesRetoExtension/{{result.Nombre}}.jpg" data-aos="flip-right" data-toggle="tooltip" data-placement="right" data-html="true" title="<strong style='color: steelblue;'>NOMBRE:</strong> {{result.Nombre}} <br><strong style='color: steelblue;'>NÚMERO:</strong> {{result.id}} <br><strong style='color: steelblue;'>HABILIDAD:</strong> {{result.Habilidad}}" width="300px" height="365px"><center>{{result.Nombre}}</center></div>
+		<div class="carta"><img id="img" src="templates/images/FaltantesRetoExtension/{{result.Nombre}}.jpg" data-aos="flip-right" data-toggle="tooltip" data-placement="right" data-html="true" title="<strong style='color: steelblue;'>NOMBRE:</strong> {{result.Nombre}} <br><strong style='color: steelblue;'>NÚMERO:</strong> {{result.id}} <br><strong style='color: steelblue;'>HABILIDAD:</strong> {{result.Habilidad}}<br>" width="300px" height="365px"><center><form action="/edicion" method="get"><input type="text" name="nombre" value="{{result.Nombre}}"><button class="btn btn-success" type="submit">Editar datos</button>&nbsp;<i class='fas fa-pencil-alt fa-1x'></i></form></center></div>
 {% endfor %}
 
 {% endblock %}
